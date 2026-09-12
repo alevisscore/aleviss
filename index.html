@@ -456,7 +456,7 @@ footer {
     width: 310px;
     height: 450px;
 
-    left: 135px;
+    left: 175px;
     top: 5px;
 
     border:
@@ -551,6 +551,17 @@ footer {
         rgba(0,0,0,0.55),
         0 0 45px
         rgba(255,36,157,0.10);
+             animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: rotate(-3deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translateY(-8px);
+    }
 }
 
 
