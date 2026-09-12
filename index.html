@@ -449,43 +449,37 @@ footer {
 
         /* decorative card behind */
 
-        .art-card-back {
+       .art-card-back {
+    position: absolute;
 
-            position:
-                absolute;
+    width: 285px;
+    height: 430px;
 
-            width:
-                285px;
+    right: 5px;
+    top: 35px;
 
-            height:
-                430px;
+    border: 1px solid rgba(255,255,255,0.10);
 
-            right:
-                5px;
+    border-radius: 25px;
 
-            top:
-                35px;
+    overflow: hidden;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
+    background: #130d17;
 
-            border-radius:
-                25px;
+    transform: rotate(3deg);
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #190b19,
-                    #0c1017
-                );
+    opacity: 0.9;
+}
 
-            transform:
-                rotate(3deg);
+.art-card-back img {
 
-            opacity:
-                0.9;
-        }
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
 
 
         .art-card-back::after {
