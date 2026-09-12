@@ -145,7 +145,7 @@
 
             width: 100%;
 
-            height: 75px;
+            height: 85px;
 
             display: flex;
 
@@ -196,15 +196,27 @@
 
         .nav-links a {
 
-            color: var(--gray);
+    color: #d8d0d8;
 
-            font-size: 12px;
+    font-size: 15px;
 
-            letter-spacing: 0.5px;
+    font-weight: 500;
 
-            transition:
-                color 0.3s ease;
-        }
+    letter-spacing: 0.8px;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+
+    color: var(--pink-light);
+
+    text-shadow:
+        0 0 12px rgba(255, 36, 157, 0.8),
+        0 0 25px rgba(255, 36, 157, 0.35);
+}
 
 
         .nav-links a:hover {
@@ -530,9 +542,9 @@
             transform:
                 rotate(-3deg);
 
-            box-shadow:
-                0 30px 70px
-                rgba(0,0,0,0.55);
+           box-shadow:
+    0 30px 70px rgba(0,0,0,0.55),
+    0 0 45px rgba(255,36,157,0.10);
 
             transition:
                 transform 0.5s ease;
@@ -541,10 +553,14 @@
 
         .art-card:hover {
 
-            transform:
-                rotate(0deg)
-                translateY(-8px);
-        }
+    transform:
+        rotate(0deg)
+        translateY(-8px);
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,0.65),
+        0 0 55px rgba(255,36,157,0.22);
+}
 
 
         .art-card img {
@@ -657,7 +673,223 @@
             background:
                 var(--sea);
         }
+/* ========================================
+   FOUR-POINTED STARS
+======================================== */
 
+.sparkle {
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    animation:
+        sparkleFloat 4s ease-in-out infinite;
+}
+
+
+/* vertical + horizontal rays */
+
+.sparkle::before,
+.sparkle::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background: currentColor;
+
+    border-radius: 50%;
+}
+
+
+/* vertical ray */
+
+.sparkle::before {
+
+    width: 3px;
+    height: 100%;
+
+    box-shadow:
+        0 0 8px currentColor,
+        0 0 18px currentColor;
+}
+
+
+/* horizontal ray */
+
+.sparkle::after {
+
+    width: 100%;
+    height: 3px;
+
+    box-shadow:
+        0 0 8px currentColor,
+        0 0 18px currentColor;
+}
+
+
+/* central glow */
+
+.sparkle {
+
+    color: #ff55b7;
+
+    filter:
+        drop-shadow(
+            0 0 8px currentColor
+        );
+}
+
+
+/* different sizes */
+
+.sparkle.small {
+
+    width: 10px;
+    height: 10px;
+}
+
+.sparkle.medium {
+
+    width: 16px;
+    height: 16px;
+}
+
+.sparkle.large {
+
+    width: 25px;
+    height: 25px;
+}
+
+
+/* different colors */
+
+.sparkle.sea {
+
+    color: #43d5cf;
+}
+
+.sparkle.purple {
+
+    color: #b06cff;
+}
+
+.sparkle.white {
+
+    color: #fff2fb;
+}
+
+
+/* positions */
+
+.sparkle-1 {
+
+    top: 12%;
+    left: 4%;
+
+    animation-delay: 0s;
+}
+
+.sparkle-2 {
+
+    top: 23%;
+    left: 45%;
+
+    animation-delay: 1s;
+}
+
+.sparkle-3 {
+
+    top: 14%;
+    right: 8%;
+
+    animation-delay: 2s;
+}
+
+.sparkle-4 {
+
+    top: 48%;
+    left: 2%;
+
+    animation-delay: 0.5s;
+}
+
+.sparkle-5 {
+
+    top: 63%;
+    left: 40%;
+
+    animation-delay: 2.5s;
+}
+
+.sparkle-6 {
+
+    top: 75%;
+    right: 6%;
+
+    animation-delay: 1.5s;
+}
+
+.sparkle-7 {
+
+    bottom: 8%;
+    left: 18%;
+
+    animation-delay: 3s;
+}
+
+.sparkle-8 {
+
+    bottom: 15%;
+    right: 35%;
+
+    animation-delay: 2s;
+}
+
+.sparkle-9 {
+
+    top: 38%;
+    right: 2%;
+
+    animation-delay: 1s;
+}
+
+
+/* animation */
+
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+
+        opacity: 0.35;
+
+        transform:
+            scale(0.8)
+            rotate(0deg);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.2)
+            rotate(12deg);
+    }
+}
 
         @keyframes float {
 
@@ -1252,7 +1484,27 @@
 
 
 <body>
+<!-- ======================================
+     DECORATIVE SPARKLES
+======================================= -->
 
+<div class="sparkle sparkle-1 large"></div>
+
+<div class="sparkle sparkle-2 small sea"></div>
+
+<div class="sparkle sparkle-3 medium purple"></div>
+
+<div class="sparkle sparkle-4 small white"></div>
+
+<div class="sparkle sparkle-5 large"></div>
+
+<div class="sparkle sparkle-6 medium sea"></div>
+
+<div class="sparkle sparkle-7 small purple"></div>
+
+<div class="sparkle sparkle-8 medium white"></div>
+
+<div class="sparkle sparkle-9 small"></div>
 
     <!-- ======================================
          NAVIGATION
