@@ -1594,163 +1594,470 @@ footer {
         }
 
 
-        /* ========================================
-           MOBILE
-        ======================================== */
+       /* ========================================
+   TABLET
+======================================== */
 
-        @media (max-width: 900px) {
+@media (max-width: 900px) {
 
-            nav {
-                padding:
-                    0 5%;
-            }
+    nav {
+        padding: 0 5%;
+    }
 
-
-            .nav-links {
-                gap:
-                    15px;
-            }
+    .nav-links {
+        gap: 15px;
+    }
 
 
-            .hero {
+    /* HERO */
 
-                grid-template-columns:
-                    1fr;
+    .hero {
 
-                padding-top:
-                    120px;
+        grid-template-columns: 1fr;
 
-                text-align:
-                    center;
-            }
+        width: min(700px, 90%);
 
+        padding-top: 120px;
 
-            .hero-content {
+        text-align: center;
 
-                display:
-                    flex;
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    center;
-            }
+        gap: 40px;
+    }
 
 
-            .hero-visual {
+    .hero-content {
 
-                width:
-                    100%;
+        display: flex;
 
-                max-width:
-                    550px;
+        flex-direction: column;
 
-                margin:
-                    auto;
-            }
+        align-items: center;
+    }
 
 
-            .about {
+    .hero-description {
 
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    40px;
-            }
+        max-width: 600px;
+    }
 
 
-            .portfolio-grid {
+    /* HERO IMAGE */
 
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
+    .hero-visual {
 
-        }
+        width: 100%;
 
+        max-width: 550px;
 
-        @media (max-width: 550px) {
+        height: 520px;
 
-            .nav-links li:nth-child(n+3) {
-                display:
-                    none;
-            }
+        margin: auto;
+    }
 
 
-            .hero h1 {
+    /* ABOUT */
 
-                font-size:
-                    70px;
+    .about {
 
-                letter-spacing:
-                    -4px;
-            }
+        grid-template-columns: 1fr;
 
-
-            .hero-visual {
-
-                height:
-                    430px;
-            }
+        gap: 40px;
+    }
 
 
-            .art-card {
+    /* PORTFOLIO */
 
-                width:
-                    250px;
+    .portfolio-grid {
 
-                height:
-                    360px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-                left:
-                    30px;
-            }
+        gap: 18px;
+    }
 
 
-            .art-card-back {
+    /* SOCIALS */
 
-                width:
-                    230px;
+    .socials {
 
-                height:
-                    345px;
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
-                right:
-                    5px;
-            }
+}
 
 
-            .portfolio-grid {
+/* ========================================
+   MOBILE
+======================================== */
 
-                grid-template-columns:
-                    1fr 1fr;
+@media (max-width: 600px) {
 
-                gap:
-                    10px;
-            }
+    /* NAVIGATION */
 
+    nav {
 
-            .socials {
+        height: 70px;
 
-                grid-template-columns:
-                    1fr;
-            }
+        padding:
+            0 6%;
+    }
 
 
-            footer {
+    .logo {
 
-                flex-direction:
-                    column;
+        font-size: 18px;
 
-                gap:
-                    10px;
+        letter-spacing: 2px;
+    }
 
-                text-align:
-                    center;
-            }
 
-        }
+    .nav-links {
+
+        gap: 12px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 12px;
+
+        letter-spacing: 0;
+    }
+
+
+    /* Hide last navigation item */
+
+    .nav-links li:nth-child(n+4) {
+
+        display: none;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+
+        width: 88%;
+
+        padding:
+            90px 0;
+    }
+
+
+    /* SECTION HEADINGS */
+
+    .section-label {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .section-title {
+
+        font-size:
+            clamp(
+                40px,
+                12vw,
+                58px
+            );
+
+        letter-spacing: -2.5px;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        width: 88%;
+
+        min-height: auto;
+
+        padding-top: 110px;
+
+        gap: 20px;
+    }
+
+
+    .eyebrow {
+
+        font-size: 10px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 70px;
+
+        letter-spacing: -4px;
+
+        margin-bottom: 28px;
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+
+        line-height: 1.65;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* BUTTONS */
+
+    .buttons {
+
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+
+    .button {
+
+        padding:
+            13px 21px;
+
+        font-size: 12px;
+    }
+
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+
+        width: 100%;
+
+        height: 430px;
+
+        max-width: 420px;
+
+        margin: 0 auto;
+    }
+
+
+    .art-card {
+
+        width: 250px;
+
+        height: 360px;
+
+        left: 50%;
+
+        top: 20px;
+
+        transform:
+            translateX(-55%)
+            rotate(-3deg);
+    }
+
+
+    .art-card-back {
+
+        width: 230px;
+
+        height: 345px;
+
+        left: 50%;
+
+        top: 5px;
+
+        transform:
+            translateX(-5%)
+            rotate(6deg);
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .portfolio-item {
+
+        aspect-ratio:
+            1 / 1;
+    }
+
+
+    /* ABOUT CARD */
+
+    .about-card {
+
+        padding: 28px;
+    }
+
+
+    /* SOCIALS */
+
+    .socials {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+
+    .social {
+
+        padding: 25px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+
+        padding:
+            100px 0;
+    }
+
+
+    .contact h2 {
+
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                60px
+            );
+
+        letter-spacing: -3px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        flex-direction:
+            column;
+
+        gap: 10px;
+
+        text-align: center;
+
+        padding:
+            25px 0;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+
+        padding:
+            15px;
+    }
+
+
+    .lightbox-image {
+
+        max-width:
+            94vw;
+
+        max-height:
+            82vh;
+
+        border-radius:
+            8px;
+    }
+
+
+    .lightbox-close {
+
+        top: 12px;
+
+        right: 15px;
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 38px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 400px) {
+
+    .nav-links {
+
+        gap: 9px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 11px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 62px;
+    }
+
+
+    .hero-visual {
+
+        height: 390px;
+    }
+
+
+    .art-card {
+
+        width: 220px;
+
+        height: 320px;
+    }
+
+
+    .art-card-back {
+
+        width: 205px;
+
+        height: 305px;
+    }
+
+
+    .portfolio-grid {
+
+        gap: 8px;
+    }
+
+
+    .section-title {
+
+        font-size: 40px;
+    }
+
+}
 
     </style>
 
@@ -2022,7 +2329,7 @@ footer {
              PORTFOLIO
         =================================== -->
 
-    <section>
+    <section id="portfolio">
 
     <div class="section-label">
         02 / Portfolio
